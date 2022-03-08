@@ -8,9 +8,11 @@ There is an approach to making digital painting landscapes where you do a graysc
 
 ## Approach
 
-Basically, I used the approach described in ["Colorizing black & white images with U-Net and conditional GAN — A Tutorial"](https://towardsdatascience.com/colorizing-black-white-images-with-u-net-and-conditional-gan-a-tutorial-81b2df111cd8) but with TensorFlow.
+Basically, I used the approach described in ["Colorizing black & white images with U-Net and conditional GAN — A Tutorial"](https://towardsdatascience.com/colorizing-black-white-images-with-u-net-and-conditional-gan-a-tutorial-81b2df111cd8) but with TensorFlow. We should train the model to predict the color given the grayscale image.
 
-We use a pre-trained classification model (ResNet18 in my case), then use it as a backbone for U-Net (or similar pix2pix architecture) model, then train U-Net on our dataset, then use the trained U-Net as a generator part of conditional GAN and finally train the whole сGAN on our dataset.
+First I had to scrape [ArtStation](https://www.artstation.com/) "Landscape" search results for small thumbnails of the works. 
+
+Then I took a pre-trained classification model (ResNet18 in my case), used it as a backbone for U-Net (or similar pix2pix architecture) model, then trained U-Net on our dataset, then used the trained U-Net as a generator part of trained GAN and finally trained the whole сGAN on our dataset.
 
 
 
